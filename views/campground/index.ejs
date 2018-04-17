@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+
+<div class="container">
+	<div class="jumbotron">
+		<div class="container">
+		 	<h1>Welcome to campgrounds</h1>
+		 	<p> View the list of campground in tamilnadu </p>
+		 	<p>
+		 		<a href="/campground/new" class="btn btn-lg btn-primary">Add new campground</a>
+		 	</p>
+	 	</div>
+	</div>
+	
+	<div class="row text-center" style="display:flex; flex-wrap:wrap">
+		<% camps.forEach(function(camp) { %>
+			<div class="col-md-3 col-sm6">
+				<div class="thumbnail">
+					<img src="<%= camp.image %>">
+					<div class="caption">
+						<h4> <%= camp.name %></h4>
+					</div>
+					<a href="/campground/<%=camp.id %>" class="btn btn-info">More INFO!</a>
+				</div>
+			</div>
+		<% }) %>
+	</div>
+
+</div>
